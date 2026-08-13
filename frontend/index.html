@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXO Business — Proyectos que valen la pena | Grupo Hilario Inmobiliaria</title>
+<link rel="stylesheet" href="/estilos/main.css">
+</head>
+<body>
+
+<!-- ============ SVG SHARED DEFS (grain + gradients used by illustrations) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+      <feturbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="noise"></feturbulence>
+      <fecolormatrix in="noise" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.05 0"></fecolormatrix>
+    </filter>
+  </defs>
+</svg>
+
+<div id="contenedor-cabecera"></div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="scene-bg">
+    <img src="/recursos/imagenes/hero-huacachina.jpg" alt="Ingreso principal del proyecto Huacachina del Norte">
+  </div>
+  <div class="photo-overlay"></div>
+  <div class="wrap">
+    <div id="heroTextBlock">
+      <span class="eyebrow hero-anim" style="animation-delay:.05s;">Invierte en tierra, invierte en futuro</span>
+      <h1 class="hero-anim" style="animation-delay:.16s;">Proyectos que <em>construyen</em><br>patrimonio real</h1>
+      <p class="lead hero-anim" style="animation-delay:.28s;">Tres proyectos pensados para que tu familia crezca sobre bases sólidas: terrenos saneados, ubicaciones estratégicas y un equipo que te acompaña de principio a fin.</p>
+      <div class="cta-row hero-anim" style="animation-delay:.4s;">
+        <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+        <a href="#contacto" class="btn btn-outline">Hablar con un asesor</a>
+      </div>
+      <div class="hero-stats hero-anim" style="animation-delay:.52s;">
+        <div><b class="count">3</b><span>Proyectos activos</span></div>
+        <div><b class="count">+700</b><span>Propietarios felices</span></div>
+        <div><b class="count">+10</b><span>Años construyendo patrimonios</span></div>
+      </div>
+    </div>
+
+    <div class="lead-card hero-anim" style="animation-delay:.35s;">
+      <h3>Recibe información al instante</h3>
+      <p>Un asesor te contacta el mismo día.</p>
+      <form data-endpoint="/api/contacto">
+        <input type="hidden" name="origen" value="hero-lead-card">
+        <div class="field">
+          <label>Nombre completo</label>
+          <input type="text" name="nombre" placeholder="Ej. María Torres" required>
+        </div>
+        <div class="field">
+          <label>Celular / WhatsApp</label>
+          <input type="tel" name="celular" placeholder="9xx xxx xxx" required>
+        </div>
+        <div class="field">
+          <label>Proyecto de interés</label>
+          <select name="proyecto">
+            <option>Oro Berry</option>
+            <option>Huacachina del Norte</option>
+            <option>Paraíso Frutal</option>
+            <option>Aún no lo decido</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Quiero más información</button>
+        <div class="form-success"></div>
+        <div class="form-error"></div>
+      </form>
+      <p class="fineprint">Al enviar aceptas nuestra política de datos personales.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS BAR ================= -->
+<section class="stats-bar">
+  <div class="wrap">
+    <div><b class="count">+10</b><span>Años construyendo patrimonios</span></div>
+    <div><b class="count">+700</b><span>Propietarios felices</span></div>
+    <div><b class="count">3</b><span>Proyectos en desarrollo</span></div>
+    <div><b class="count">+120</b><span>Asesores aliados</span></div>
+  </div>
+</section>
+
+<!-- ================= PROYECTOS ================= -->
+<section class="proyectos section-pad pin-wrap" id="proyectos" style="height:260vh;">
+ <div class="pin-sticky">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Nuestros proyectos</span>
+      <h2>Tres oportunidades, un mismo respaldo</h2>
+      <p>Elegimos cada ubicación pensando en crecimiento, accesibilidad y calidad de vida.</p>
+    </div>
+
+    <div class="grid-3">
+      <!-- Oro Berry -->
+      <article class="card pin-item">
+        <div class="card-media scene">
+          <div class="badges"><span class="badge solid">Desde $16,000</span></div>
+          <svg class="frame-corner tl" viewBox="0 0 26 26"><path d="M1 12 V1 H12"></path></svg>
+          <svg class="frame-corner br" viewBox="0 0 26 26"><path d="M1 12 V1 H12"></path></svg>
+          <img class="scene-svg" src="/recursos/imagenes/card-oroberry.jpg" alt="Trabajador cosechando arándanos en Oro Berry">
+        </div>
+        <div class="card-body">
+          <div class="loc">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+            Ubicación por confirmar
+          </div>
+          <h3>Oro Berry</h3>
+          <p class="desc">Inversión agrícola premium bajo contrato de asociación y participación, con alta demanda internacional. Lotes desde 500m² listos para producir arándanos, el oro azul del campo.</p>
+          <ul class="feat-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"></path></svg>Asociación y participación</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"></path></svg>Riego tecnificado</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"></path></svg>500m²</li>
+          </ul>
+          <a href="/proyectos/oro-berry.html" class="card-cta">Quiero más información →</a>
+        </div>
+      </article>
+
+      <!-- Huacachina del Norte -->
+      <article class="card pin-item">
+        <div class="card-media scene">
+          <div class="badges"><span class="badge">Desde $20,000</span></div>
+          <svg class="frame-corner tl" viewBox="0 0 26 26"><path d="M1 12 V1 H12"></path></svg>
+          <svg class="frame-corner br" viewBox="0 0 26 26"><path d="M1 12 V1 H12"></path></svg>
+          <img class="scene-svg" src="/recursos/imagenes/card-huacachina.jpg" alt="Ingreso a Huacachina del Norte visto desde el aire">
+        </div>
+        <div class="card-body">
+          <div class="loc">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+            Ubicación por confirmar
+          </div>
+          <h3>Huacachina del Norte</h3>
+          <p class="desc">El oasis de tu inversión: un espacio único donde la naturaleza se encuentra con la rentabilidad, con lotes desde 119m² y vistas privilegiadas.</p>
+          <ul class="feat-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"></path></svg>Título independizado</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"></path></svg>Habilitación urbana</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"></path></svg>Desde 119m²</li>
+          </ul>
+          <a href="/proyectos/huacachina-del-norte.html" class="card-cta">Quiero más información →</a>
+        </div>
+      </article>
+
+      <!-- Paraíso Frutal -->
+      <article class="card pin-item">
+        <div class="card-media scene">
+          <div class="badges"><span class="badge">Desde $16,200</span></div>
+          <svg class="frame-corner tl" viewBox="0 0 26 26"><path d="M1 12 V1 H12"></path></svg>
+          <svg class="frame-corner br" viewBox="0 0 26 26"><path d="M1 12 V1 H12"></path></svg>
+          <img class="scene-svg" src="/recursos/imagenes/card-paraiso.jpg" alt="Trabajadores cosechando en Paraíso Frutal al atardecer">
+        </div>
+        <div class="card-body">
+          <div class="loc">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+            Ubicación por confirmar
+          </div>
+          <h3>Paraíso Frutal</h3>
+          <p class="desc">Proyecto agroindustrial de exportación con lotes desde 300m², enfocado exclusivamente en el cultivo de arándanos de alta demanda internacional.</p>
+          <ul class="feat-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"></path></svg>Título en Registros Públicos</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"></path></svg>Riego tecnificado</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"></path></svg>300m²</li>
+          </ul>
+          <a href="/proyectos/paraiso-frutal.html" class="card-cta">Quiero más información →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+ </div>
+</section>
+
+<!-- ================= VALUES / NOSOTROS (con imagen) ================= -->
+<section class="values section-pad pin-wrap" id="nosotros" style="height:300vh;">
+ <div class="pin-sticky">
+  <div class="wrap">
+    <div class="values-media scene reveal">
+      <svg class="frame-corner tl" viewBox="0 0 26 26"><path d="M1 12 V1 H12"></path></svg>
+      <svg class="frame-corner br" viewBox="0 0 26 26"><path d="M1 12 V1 H12"></path></svg>
+      <img class="scene-svg" src="/recursos/imagenes/equipo.jpg" alt="Equipo de NEXO Business">
+    </div>
+
+    <div>
+      <div class="section-head reveal">
+        <span class="eyebrow">Por qué elegirnos</span>
+        <h2>Respaldo real, de principio a fin</h2>
+        <p>Igual que las grandes inmobiliarias del país, pero con la cercanía de un equipo que conoce cada proyecto a detalle.</p>
+      </div>
+      <div class="grid-2x2">
+        <div class="value-item pin-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"></path><path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path></svg></div>
+          <h4>Asesoría personalizada</h4>
+          <p>Un asesor dedicado te acompaña desde la primera visita hasta la entrega de tu título.</p>
+        </div>
+        <div class="value-item pin-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="9"></circle></svg></div>
+          <h4>Transparencia total</h4>
+          <p>Documentación saneada y visible desde el primer día. Sin letras pequeñas.</p>
+        </div>
+        <div class="value-item pin-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 10h18M7 15h.01M11 15h4"></path><rect x="3" y="5" width="18" height="14" rx="2"></rect></svg></div>
+          <h4>Financiamiento flexible</h4>
+          <p>Planes de pago que se ajustan a tu bolsillo, con cuota inicial accesible.</p>
+        </div>
+        <div class="value-item pin-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"></path><path d="M14 6h7v7"></path></svg></div>
+          <h4>Alta plusvalía</h4>
+          <p>Ubicaciones elegidas por su proyección de crecimiento y desarrollo urbano.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</section>
+
+<!-- ================= IMAGE BREAK ================= -->
+<section class="image-break">
+  <div class="scene-bg">
+    <img src="/recursos/imagenes/paraiso-atardecer.jpg" alt="Cultivo de arándanos en Paraíso Frutal al atardecer">
+  </div>
+  <div class="overlay"></div>
+  <div class="content reveal">
+    <blockquote>"Elegimos cada terreno como si fuera para nuestra propia familia: con visión de largo plazo y raíces firmes."</blockquote>
+    <cite>— Equipo Fundador, Grupo Hilario</cite>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIOS EN VIDEO ================= -->
+<section class="video-testimonios section-pad">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <span class="eyebrow" style="justify-content:center;">Experiencias en video</span>
+      <h2>Nuestros inversionistas cuentan su experiencia</h2>
+    </div>
+    <div class="video-grid">
+      <div class="video-card reveal">
+        <div class="video-thumb">
+          <img src="/recursos/imagenes/card-huacachina.jpg" alt="Video testimonio de Dario Sarmiento">
+          <button class="play-btn" type="button" aria-label="Reproducir video de Dario Sarmiento">▶</button>
+        </div>
+        <div class="video-info">
+          <b>Dario Sarmiento</b>
+          <span>Inversor en Huacachina del Norte</span>
+        </div>
+        <div class="video-note">Video en producción — disponible pronto.</div>
+      </div>
+      <div class="video-card reveal">
+        <div class="video-thumb">
+          <img src="/recursos/imagenes/card-oroberry.jpg" alt="Video testimonio de Mery Gomez">
+          <button class="play-btn" type="button" aria-label="Reproducir video de Mery Gomez">▶</button>
+        </div>
+        <div class="video-info">
+          <b>Mery Gomez</b>
+          <span>Inversora en Oro Berry</span>
+        </div>
+        <div class="video-note">Video en producción — disponible pronto.</div>
+      </div>
+      <div class="video-card reveal">
+        <div class="video-thumb">
+          <img src="/recursos/imagenes/card-paraiso.jpg" alt="Video testimonio de Marlene">
+          <button class="play-btn" type="button" aria-label="Reproducir video de Marlene">▶</button>
+        </div>
+        <div class="video-info">
+          <b>Marlene</b>
+          <span>Inversora en Paraíso Frutal</span>
+        </div>
+        <div class="video-note">Video en producción — disponible pronto.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIOS ================= -->
+<section class="testimonios section-pad pin-wrap" style="height:260vh;">
+ <div class="pin-sticky">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <span class="eyebrow" style="justify-content:center;">Testimonios</span>
+      <h2>Familias que ya construyeron su futuro</h2>
+    </div>
+    <div class="t-grid">
+      <div class="t-card pin-item">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="quote">La transparencia de NEXO Business me dio la seguridad que necesitaba para invertir mis ahorros. Hoy veo mi patrimonio crecer día a día.</p>
+        <div class="t-person"><div class="t-avatar"><span>R</span></div><div><b>Roberto Sánchez</b><span class="role">Empresario</span></div></div>
+      </div>
+      <div class="t-card pin-item">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="quote">Excelente asesoría desde el primer momento. El equipo realmente sabe lo que hace en el mercado inmobiliario.</p>
+        <div class="t-person"><div class="t-avatar"><span>L</span></div><div><b>Lucía Méndez</b><span class="role">Inversora</span></div></div>
+      </div>
+      <div class="t-card pin-item">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="quote">Compré mi lote en Oro Berry y la proyección de rentabilidad es increíble. Es la mejor decisión financiera que he tomado este año.</p>
+        <div class="t-person"><div class="t-avatar"><span>A</span></div><div><b>Andrés Castro</b><span class="role">Ingeniero</span></div></div>
+      </div>
+    </div>
+  </div>
+ </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section class="contacto section-pad" id="contacto">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Contáctanos</span>
+      <h2 style="font-size:2.3rem;">Hablemos de tu próxima inversión</h2>
+      <p style="color:var(--gray); max-width:420px;">Escríbenos y un asesor se comunicará contigo el mismo día hábil.</p>
+      <div class="info-list">
+        <div class="info-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"></path></svg></div>
+          <div><b>+51 922 067 234</b><span>Llamadas y WhatsApp</span></div>
+        </div>
+        <div class="info-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></div>
+          <div><b>nexobusiness@hilariogrp.com</b><span>Respuesta en menos de 24h</span></div>
+        </div>
+        <div class="info-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></div>
+          <div><b>Oficina central</b><span>Calle Luis García Rojas 181, Miraflores, Lima, Perú</span></div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" data-endpoint="/api/contacto">
+      <input type="hidden" name="origen" value="seccion-contacto">
+      <div class="two-col">
+        <div class="field"><label>Nombres</label><input type="text" name="nombres" placeholder="Ej. Carlos" required></div>
+        <div class="field"><label>Apellidos</label><input type="text" name="apellidos" placeholder="Ej. Ramírez" required></div>
+      </div>
+      <div class="two-col">
+        <div class="field"><label>Celular</label><input type="tel" name="celular" placeholder="9xx xxx xxx" required></div>
+        <div class="field"><label>Correo</label><input type="email" name="correo" placeholder="tucorreo@mail.com" required></div>
+      </div>
+      <div class="field">
+        <label>¿Qué te interesa?</label>
+        <select name="interes">
+          <option>Comprar un lote</option>
+          <option>Otra consulta</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Mensaje</label>
+        <textarea rows="4" name="mensaje" placeholder="Cuéntanos brevemente qué necesitas..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;">Enviar mensaje</button>
+      <div class="form-success"></div>
+      <div class="form-error"></div>
+    </form>
+  </div>
+</section>
+
+<div id="contenedor-pie"></div>
+
+<!-- ================= WHATSAPP FLOAT ================= -->
+<a class="wa-float" href="https://wa.me/51922067234" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2zm0 18.1h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.84-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.37c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.85 5.8 2.4a8.14 8.14 0 0 1 2.4 5.81c0 4.52-3.68 8.2-8.2 8.2z"></path></svg>
+</a>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

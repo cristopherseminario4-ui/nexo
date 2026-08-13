@@ -1,0 +1,12 @@
+{
+  "name": "nexo-business-backend",
+  "version": "1.0.0",
+  "description": "Servidor de NEXO Business: sirve el frontend y recibe el formulario de contacto.",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

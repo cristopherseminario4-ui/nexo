@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paraíso Frutal — NEXO Business</title>
+<link rel="stylesheet" href="/estilos/main.css">
+</head>
+<body>
+
+<div id="contenedor-cabecera"></div>
+
+<!-- ================= HERO DEL PROYECTO ================= -->
+<section class="project-hero">
+  <img src="/recursos/imagenes/paraiso-atardecer.jpg" alt="Cultivo de arándanos en Paraíso Frutal al atardecer">
+  <div class="overlay"></div>
+  <div class="wrap content">
+    <span class="eyebrow">Paraíso Frutal</span>
+    <h1>Cosecha los frutos de tu éxito</h1>
+    <span class="badge-price">Desde $16,200 · Lotes de 300m²</span>
+  </div>
+</section>
+
+<!-- ================= INTRODUCCIÓN ================= -->
+<section class="project-intro">
+  <div class="wrap">
+    <p>Paraíso Frutal es un proyecto agroindustrial de exportación, enfocado exclusivamente en el cultivo de arándanos de alta demanda internacional. Aquí no solo inviertes en tierra, inviertes en producción real.</p>
+    <ul class="project-bullets">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"></path></svg>Lotes desde 300m² optimizados para cultivo</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"></path></svg>Título de propiedad inscrito en Registros Públicos</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"></path></svg>Riego tecnificado y gestión agronómica especializada</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"></path></svg>Cultivo exclusivo de arándanos de exportación</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= UBICACIÓN ================= -->
+<section class="project-location">
+  <div class="wrap">
+    <div class="section-head center" style="margin:0 auto 32px;">
+      <span class="eyebrow" style="justify-content:center;">Ubicación</span>
+      <h2>Dónde queda Paraíso Frutal</h2>
+    </div>
+    <div class="map-embed">
+      <iframe src="https://www.google.com/maps?q=-11.42939,-77.200356&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Ubicación de Paraíso Frutal"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FORMULARIO DE CALIFICACIÓN ================= -->
+<section class="qualify-section">
+  <div class="wrap">
+    <div class="qualify-card">
+      <h3>¿Paraíso Frutal es para ti?</h3>
+      <p class="sub">Cuéntanos un poco de tu situación y un asesor te contacta con la información exacta para tu perfil.</p>
+      <form data-endpoint="/api/prospecto">
+        <input type="hidden" name="proyecto" value="Paraíso Frutal">
+        <div class="two-col">
+          <div class="field"><label>Nombre completo</label><input type="text" name="nombre" placeholder="Ej. María Torres" required></div>
+          <div class="field"><label>Celular / WhatsApp</label><input type="tel" name="celular" placeholder="9xx xxx xxx" required></div>
+        </div>
+        <div class="field"><label>Correo</label><input type="email" name="correo" placeholder="tucorreo@mail.com"></div>
+        <div class="field">
+          <label>Presupuesto disponible para invertir</label>
+          <select name="presupuesto">
+            <option>Menos de $5,000</option>
+            <option>$5,000 – $15,000</option>
+            <option>$15,000 – $30,000</option>
+            <option>Más de $30,000</option>
+          </select>
+        </div>
+        <div class="two-col">
+          <div class="field">
+            <label>¿Cómo planeas financiarlo?</label>
+            <select name="financiamiento">
+              <option>Ahorros propios</option>
+              <option>Financiamiento bancario</option>
+              <option>Ambos / aún evaluando</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>¿Cuándo planeas invertir?</label>
+            <select name="plazo">
+              <option>Inmediatamente</option>
+              <option>En 1 a 3 meses</option>
+              <option>En 3 a 6 meses</option>
+              <option>Aún explorando opciones</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Quiero que me contacten</button>
+        <div class="form-success"></div>
+        <div class="form-error"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="contenedor-pie"></div>
+
+<a class="wa-float" href="https://wa.me/51922067234" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2zm0 18.1h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.84-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.37c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.85 5.8 2.4a8.14 8.14 0 0 1 2.4 5.81c0 4.52-3.68 8.2-8.2 8.2z"></path></svg>
+</a>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
