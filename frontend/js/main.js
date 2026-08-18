@@ -223,7 +223,7 @@ function initTilt(selector, opts) {
 }
 if (!reduceMotion) {
   initTilt('.grid-3 .card', { maxTilt: 6, lift: -8, scale: 1.02 });
-  initTilt('.grid-2x2 .value-item', { maxTilt: 5, lift: -6, scale: 1.015 });
+  initTilt('.grid-4 .value-item', { maxTilt: 5, lift: -6, scale: 1.015 });
   initTilt('.t-grid .t-card', { maxTilt: 5, lift: -4, scale: 1.015 });
 }
 
