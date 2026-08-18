@@ -216,7 +216,7 @@ nav.main-nav a:hover{opacity:1; color:var(--gold);}
 
 /* ---------- PROYECTOS ---------- */
 .proyectos{background:var(--offwhite);}
-.projects-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:30px;}
+.projects-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:30px;}
 .card{
   background:var(--white); border-radius:var(--radius); overflow:hidden; box-shadow:0 14px 34px -18px rgba(10,22,18,0.25);
   transition:transform .3s ease, box-shadow .3s ease; display:flex; flex-direction:column;
@@ -235,7 +235,10 @@ nav.main-nav a:hover{opacity:1; color:var(--gold);}
 .card-body{padding:28px; flex:1; display:flex; flex-direction:column;}
 .card-body .loc{display:flex; align-items:center; gap:6px; font-size:0.78rem; color:var(--green); font-weight:700; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:10px;}
 .card-body h3{font-size:1.4rem; margin-bottom:10px;}
-.card-body p.desc{color:var(--gray); font-size:0.92rem; margin-bottom:18px; flex:1;}
+.card-body p.desc{
+  color:var(--gray); font-size:0.92rem; margin-bottom:18px; flex:1; min-height:4.8em;
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+}
 .feat-list{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px;}
 .feat-list li{font-size:0.74rem; background:var(--offwhite); border:1px solid #c9ebe0; padding:6px 11px; border-radius:999px; color:var(--ink); display:flex; align-items:center; gap:5px;}
 .feat-list li svg{width:12px; height:12px; stroke:var(--green);}
@@ -349,7 +352,7 @@ footer{background:var(--black); color:rgba(255,255,255,0.65); padding:80px 0 30p
 @media (max-width: 980px){
   .hero .wrap{grid-template-columns:1fr;}
   .hero h1{font-size:2.5rem;}
-  .grid-4{grid-template-columns:repeat(2,1fr);}
+  .projects-grid, .grid-4{grid-template-columns:repeat(2,1fr);}
   .contacto .wrap{grid-template-columns:1fr;}
   .foot-grid{grid-template-columns:1fr 1fr;}
   .stats-bar .wrap{grid-template-columns:repeat(2,1fr); row-gap:28px;}
@@ -357,7 +360,7 @@ footer{background:var(--black); color:rgba(255,255,255,0.65); padding:80px 0 30p
 @media (max-width: 700px){
   nav.main-nav, .header-cta .btn-outline{display:none;}
   .burger{display:flex;}
-  .grid-4, .t-grid, .video-grid{grid-template-columns:1fr;}
+  .projects-grid, .grid-4, .t-grid, .video-grid{grid-template-columns:1fr;}
   .section-pad{padding:70px 0;}
   .section-head h2{font-size:2rem;}
   .two-col{grid-template-columns:1fr;}
