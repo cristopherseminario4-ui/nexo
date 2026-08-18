@@ -216,7 +216,7 @@ nav.main-nav a:hover{opacity:1; color:var(--gold);}
 
 /* ---------- PROYECTOS ---------- */
 .proyectos{background:var(--offwhite);}
-.grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:30px;}
+.projects-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:30px;}
 .card{
   background:var(--white); border-radius:var(--radius); overflow:hidden; box-shadow:0 14px 34px -18px rgba(10,22,18,0.25);
   transition:transform .3s ease, box-shadow .3s ease; display:flex; flex-direction:column;
@@ -357,7 +357,7 @@ footer{background:var(--black); color:rgba(255,255,255,0.65); padding:80px 0 30p
 @media (max-width: 700px){
   nav.main-nav, .header-cta .btn-outline{display:none;}
   .burger{display:flex;}
-  .grid-2, .grid-4, .t-grid, .video-grid{grid-template-columns:1fr;}
+  .grid-4, .t-grid, .video-grid{grid-template-columns:1fr;}
   .section-pad{padding:70px 0;}
   .section-head h2{font-size:2rem;}
   .two-col{grid-template-columns:1fr;}
