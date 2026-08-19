@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asesores NEXO Business — Únete y genera ingresos | Grupo Hilario Inmobiliaria</title>
+<meta name="description" content="Súmate a la red de asesores de NEXO Business: comisiones atractivas, proyectos con respaldo real y acompañamiento constante. Únete al grupo de WhatsApp.">
+<link rel="stylesheet" href="/estilos/main.css">
+<style>
+:root{
+  --surface: rgba(18,51,42,0.55);
+  --border: rgba(115,204,179,0.14);
+  --border-hl: rgba(115,204,179,0.35);
+  --wa: #25D366;
+}
+body{ background: var(--black); color: var(--white); overflow-x: hidden; }
+
+.mesh-bg{
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 50% at 10% -10%, rgba(115,204,179,0.18), transparent),
+    radial-gradient(ellipse 60% 60% at 90% 110%, rgba(47,143,115,0.22), transparent),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(191,232,218,0.05), transparent);
+}
+.grid-overlay{
+  position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.05;
+  background-image:
+    linear-gradient(var(--green-bright) 1px, transparent 1px),
+    linear-gradient(90deg, var(--green-bright) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.wrap-a{ position: relative; z-index: 10; max-width: 560px; margin: 0 auto; padding: 24px 16px 64px; }
+
+@keyframes fadeUp{ from{ opacity:0; transform: translateY(24px);} to{ opacity:1; transform: translateY(0);} }
+.reveal-in{ animation: fadeUp 0.6s ease both; }
+
+.logo-row{ display:flex; justify-content:center; margin-bottom: 30px; }
+.logo-row img{ height: 40px; width:auto; display:block; filter: drop-shadow(0 2px 14px rgba(115,204,179,0.25)); }
+
+.pill{
+  display:inline-flex; align-items:center; gap:8px;
+  background: rgba(115,204,179,0.1); border: 1px solid rgba(115,204,179,0.3);
+  color: var(--green-bright); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; padding: 6px 14px; border-radius: 100px; font-family:'Work Sans',sans-serif;
+}
+.pill-dot{ width:6px; height:6px; border-radius:50%; background: var(--green-bright); box-shadow: 0 0 8px var(--green-bright); animation: pulse-a 2s ease-in-out infinite; }
+@keyframes pulse-a{ 0%,100%{ opacity:1; transform:scale(1);} 50%{ opacity:0.4; transform:scale(0.7);} }
+
+.hero-a{ text-align:center; padding: 8px 0 30px; }
+.hero-a .pill{ margin-bottom:22px; }
+.hero-a h1{ font-family:'Archivo Black', Georgia, serif; font-weight:900; line-height:1.2; color:var(--white); font-size: clamp(1.7rem, 8vw, 2.7rem); margin-bottom:16px; }
+.hero-a h1 em{ font-style:normal; background: linear-gradient(135deg, var(--green-bright) 0%, var(--green-light) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.hero-a p{ font-family:'Work Sans',sans-serif; font-size:0.98rem; color: rgba(255,255,255,0.65); line-height:1.65; max-width:480px; margin:0 auto 30px; }
+
+.btn-wa{
+  display:flex; align-items:center; justify-content:center; gap:12px;
+  width:100%; max-width:400px; margin:0 auto;
+  background: var(--wa); border:none; color:#fff;
+  padding:18px 24px; border-radius:14px;
+  font-size:1rem; font-weight:700; text-decoration:none; font-family:'Work Sans',sans-serif;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  box-shadow: 0 8px 28px rgba(37,211,102,0.4), 0 2px 8px rgba(0,0,0,0.3);
+}
+.btn-wa:hover{ transform: translateY(-3px); box-shadow: 0 16px 40px rgba(37,211,102,0.55); background:#1ebe5d; }
+.btn-wa svg{ width:22px; height:22px; flex-shrink:0; }
+.btn-note{ margin-top:14px; font-size:0.75rem; color: rgba(255,255,255,0.4); font-family:'Work Sans',sans-serif; }
+
+.stats-a{ display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin: 40px 0; }
+.stat-a{ background: var(--surface); backdrop-filter: blur(20px); border:1px solid var(--border); border-radius:16px; padding:18px 8px; text-align:center; }
+.stat-a b{ display:block; font-family:'Archivo Black',serif; font-size:1.25rem; color: var(--green-bright); margin-bottom:4px; }
+.stat-a span{ font-size:0.66rem; color: rgba(255,255,255,0.55); font-family:'Work Sans',sans-serif; }
+
+.kicker-a{ text-align:center; font-size:0.7rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color: var(--green-bright); margin-bottom:10px; font-family:'Work Sans',sans-serif; }
+.title-a{ text-align:center; font-family:'Archivo Black', Georgia, serif; font-weight:900; font-size: clamp(1.3rem, 5.5vw, 1.9rem); color:var(--white); margin-bottom:32px; line-height:1.3; }
+.title-a em{ font-style:normal; background: linear-gradient(135deg, var(--green-bright) 0%, var(--green-light) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+.panel-a{
+  background: var(--surface); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
+  border: 1px solid var(--border); border-radius: 24px; padding: 32px 28px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.05);
+  transition: border-color 0.3s;
+}
+.panel-a:hover{ border-color: var(--border-hl); }
+
+.benef-grid-a{ display:grid; grid-template-columns: repeat(2,1fr); gap:16px; margin-bottom:56px; }
+.benef-card-a{ padding:26px 22px; text-align:left; }
+.benef-icon-a{ width:40px; height:40px; border-radius:10px; background: rgba(115,204,179,0.12); border:1px solid var(--border-hl); display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+.benef-icon-a svg{ width:20px; height:20px; stroke: var(--green-bright); }
+.benef-card-a h4{ font-family:'Work Sans',sans-serif; font-size:0.95rem; font-weight:700; color:var(--white); margin-bottom:8px; }
+.benef-card-a p{ font-family:'Work Sans',sans-serif; font-size:0.85rem; color: rgba(255,255,255,0.55); line-height:1.55; }
+
+.pasos-a{ margin-bottom:56px; }
+.pasos-list-a{ display:flex; flex-direction:column; gap:12px; }
+.paso-item-a{ display:flex; align-items:flex-start; gap:14px; padding:18px 20px; }
+.paso-num-a{ flex-shrink:0; width:30px; height:30px; border-radius:8px; background: rgba(115,204,179,0.12); border:1px solid var(--border-hl); color:var(--green-bright); font-family:'Archivo Black',serif; font-size:0.85rem; display:flex; align-items:center; justify-content:center; }
+.paso-item-a p{ font-family:'Work Sans',sans-serif; font-size:0.88rem; color: rgba(255,255,255,0.6); line-height:1.55; padding-top:4px; }
+.paso-item-a strong{ color:var(--white); }
+
+.info-strip-a{ display:grid; grid-template-columns: repeat(3,1fr); gap:16px; margin-bottom:56px; }
+.info-card-a{ padding:22px 16px; text-align:center; }
+.info-card-a .tag{ font-family:'Work Sans',sans-serif; font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; color: var(--green-bright); margin-bottom:8px; }
+.info-card-a h4{ font-family:'Work Sans',sans-serif; font-size:0.88rem; font-weight:700; color:var(--white); }
+
+.cta-final-a{ text-align:center; padding:8px 0 12px; }
+.cta-final-a h3{ font-family:'Archivo Black', Georgia, serif; font-size:1.3rem; color:var(--white); margin-bottom:12px; }
+.cta-final-a h3 em{ font-style:normal; color: var(--green-bright); }
+.cta-final-a > p{ font-family:'Work Sans',sans-serif; font-size:0.92rem; color: rgba(255,255,255,0.6); line-height:1.65; margin-bottom:28px; }
+
+.legal-a{ margin-top:40px; text-align:center; font-size:0.72rem; color: rgba(255,255,255,0.35); line-height:1.7; font-family:'Work Sans',sans-serif; }
+
+@media (max-width: 639px){
+  .benef-grid-a{ grid-template-columns:1fr; gap:12px; margin-bottom:36px; }
+  .info-strip-a{ grid-template-columns:1fr; gap:12px; margin-bottom:36px; }
+  .pasos-a{ margin-bottom:36px; }
+  .panel-a{ padding:24px 20px; }
+  .stats-a{ margin:24px 0 32px; }
+}
+@media (min-width: 640px){
+  .wrap-a{ max-width:680px; padding:40px 24px 80px; }
+}
+@media (min-width: 1024px){
+  .wrap-a{ max-width:760px; padding:56px 32px 96px; }
+  .benef-grid-a{ grid-template-columns: repeat(4,1fr); }
+  .info-strip-a{ grid-template-columns: repeat(3,1fr); }
+  .pasos-list-a{ display:grid; grid-template-columns: repeat(2,1fr); gap:14px; }
+}
+</style>
+</head>
+<body>
+
+<div class="mesh-bg"></div>
+<div class="grid-overlay"></div>
+
+<div class="wrap-a">
+
+  <div class="logo-row reveal-in">
+    <img src="/recursos/imagenes/logo-nexo-blanco.png" alt="NEXO Business">
+  </div>
+
+  <section class="hero-a">
+    <div class="pill reveal-in" style="animation-delay:.05s">
+      <span class="pill-dot"></span>
+      Programa de asesores · Cupos limitados
+    </div>
+    <h1 class="reveal-in" style="animation-delay:.1s">Genera ingresos como <em>Asesor NEXO Business</em></h1>
+    <p class="reveal-in" style="animation-delay:.16s">Únete a nuestra red de asesores inmobiliarios y vende terrenos con respaldo real, comisiones atractivas y el acompañamiento de un equipo con más de 10 años construyendo patrimonios.</p>
+    <div class="reveal-in" style="animation-delay:.22s">
+      <a href="https://chat.whatsapp.com/LY1Kgt7635lERMulHwHyuP?s=sw&p=a&ilr=1" class="btn-wa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Unirme al grupo de asesores
+      </a>
+      <p class="btn-note">Sin costo de inscripción · Te unes directo al grupo de WhatsApp</p>
+    </div>
+
+    <div class="stats-a reveal-in" style="animation-delay:.3s">
+      <div class="stat-a"><b>+120</b><span>Asesores aliados</span></div>
+      <div class="stat-a"><b>3</b><span>Proyectos activos</span></div>
+      <div class="stat-a"><b>+10</b><span>Años de trayectoria</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="kicker-a">Beneficios</div>
+    <h2 class="title-a">Esto es lo que <em>ganas</em> como asesor</h2>
+
+    <div class="benef-grid-a">
+      <div class="panel-a benef-card-a">
+        <div class="benef-icon-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h4>Comisiones atractivas</h4>
+        <p>Gana por cada venta cerrada, con un esquema de comisiones transparente desde tu primer lote vendido.</p>
+      </div>
+      <div class="panel-a benef-card-a">
+        <div class="benef-icon-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h4>Proyectos con respaldo real</h4>
+        <p>Vendes terrenos saneados y con documentación en regla. Tu palabra como asesor queda respaldada.</p>
+      </div>
+      <div class="panel-a benef-card-a">
+        <div class="benef-icon-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg></div>
+        <h4>Material y capacitación</h4>
+        <p>Recibe fichas de cada proyecto, precios actualizados, argumentario de venta y capacitación constante.</p>
+      </div>
+      <div class="panel-a benef-card-a">
+        <div class="benef-icon-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><circle cx="12" cy="8" r="4"/></svg></div>
+        <h4>Soporte continuo</h4>
+        <p>Un equipo comercial te acompaña en el cierre de cada venta, desde la primera consulta hasta la firma.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pasos-a">
+    <div class="kicker-a">Cómo funciona</div>
+    <h2 class="title-a">Empieza a <em>vender en 4 pasos</em></h2>
+    <div class="panel-a">
+      <div class="pasos-list-a">
+        <div class="paso-item-a">
+          <div class="paso-num-a">01</div>
+          <p><strong>Únete al grupo</strong> — Ingresa al grupo de WhatsApp de asesores NEXO y preséntate con el equipo.</p>
+        </div>
+        <div class="paso-item-a">
+          <div class="paso-num-a">02</div>
+          <p><strong>Recibe tu material</strong> — Te compartimos fichas de cada proyecto, precios y argumentario de venta.</p>
+        </div>
+        <div class="paso-item-a">
+          <div class="paso-num-a">03</div>
+          <p><strong>Empieza a vender</strong> — Comparte los proyectos con tus contactos y agenda visitas con nuestro respaldo.</p>
+        </div>
+        <div class="paso-item-a">
+          <div class="paso-num-a">04</div>
+          <p><strong>Cobra tus comisiones</strong> — Por cada venta cerrada, recibes tu comisión según el esquema vigente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="info-strip-a">
+    <div class="panel-a info-card-a"><div class="tag">Comunidad</div><h4>Grupo activo de WhatsApp</h4></div>
+    <div class="panel-a info-card-a"><div class="tag">Inscripción</div><h4>Totalmente gratuita</h4></div>
+    <div class="panel-a info-card-a"><div class="tag">Comisión</div><h4>Pago por venta cerrada</h4></div>
+  </div>
+
+  <section class="cta-final-a">
+    <div class="kicker-a">Último paso</div>
+    <div class="panel-a">
+      <h3>Únete a la red de <em>asesores NEXO</em></h3>
+      <p>Entra al grupo de WhatsApp y empieza a recibir material, capacitación y soporte directo del equipo.</p>
+      <a href="https://chat.whatsapp.com/LY1Kgt7635lERMulHwHyuP?s=sw&p=a&ilr=1" class="btn-wa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Unirme al grupo de asesores
+      </a>
+      <p class="btn-note">Al unirte aceptas las normas de convivencia del grupo.</p>
+    </div>
+  </section>
+
+  <p class="legal-a">
+    NEXO Business — Grupo Hilario Inmobiliaria. Programa de asesores.<br>
+    Este grupo es gestionado de forma independiente y no está afiliado a WhatsApp Inc.
+  </p>
+
+</div>
+
+</body>
+</html>

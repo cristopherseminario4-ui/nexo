@@ -27,6 +27,11 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(ROOT, 'frontend', 'index.html'));
 });
 
+// ---------- landing de captación de asesores ----------
+app.get('/asesores', (req, res) => {
+  res.sendFile(path.join(ROOT, 'frontend', 'asesores.html'));
+});
+
 // ---------- contact form ----------
 app.post('/api/contacto', (req, res) => {
   const body = req.body || {};
