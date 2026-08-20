@@ -67,9 +67,22 @@ nav.main-nav a:hover{opacity:1; color:var(--green-bright);}
 .hero-stats{display:flex; gap:30px; margin-top:40px; flex-wrap:wrap;}
 .hero-stats div b{display:block; font-family:'Montserrat',sans-serif; font-size:1.6rem; color:var(--white);}
 .hero-stats div span{font-size:0.74rem; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.06em;}
-.hero-media{border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); aspect-ratio:4/5; position:relative;}
-.hero-media img{width:100%; height:100%; object-fit:cover;}
-.hero-media::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 60%, rgba(10,22,18,0.55));}
+.hero-media{position:relative; perspective:1200px;}
+.hero-media-frame{border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); position:relative; aspect-ratio:1000/562; transition:transform .4s ease; will-change:transform;}
+.hero-media-frame img{width:100%; height:100%; object-fit:cover; object-position:center 38%; transform-origin:center center; animation:heroZoom 24s ease-in-out infinite;}
+.hero-media-frame::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 55%, rgba(10,22,18,0.55)); pointer-events:none;}
+@keyframes heroZoom{0%{transform:scale(1);} 50%{transform:scale(1.09) translateY(-1.5%);} 100%{transform:scale(1);}}
+@media (prefers-reduced-motion: reduce){ .hero-media-frame img{animation:none;} }
+.hm-corner{position:absolute; width:24px; height:24px; z-index:3; pointer-events:none;}
+.hm-corner.tl{top:14px; left:14px;}
+.hm-corner.br{bottom:14px; right:14px; transform:rotate(180deg);}
+.hm-corner path{stroke:rgba(255,255,255,0.6); stroke-width:1.6; fill:none;}
+.floating-badge{position:absolute; z-index:4; background:rgba(10,22,18,0.82); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border:1px solid rgba(115,204,179,0.32); border-radius:14px; padding:12px 16px; box-shadow:0 14px 30px -10px rgba(0,0,0,0.5); opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+.floating-badge.in{opacity:1; transform:translateY(0);}
+.floating-badge b{display:block; font-family:'Montserrat',sans-serif; font-size:1.1rem; color:var(--green-bright); line-height:1.2;}
+.floating-badge span{font-size:0.66rem; color:rgba(255,255,255,0.65); text-transform:uppercase; letter-spacing:0.04em;}
+.fb-1{top:16px; right:16px;}
+.fb-2{bottom:16px; left:16px;}
 
 /* ---------- BENEFICIOS ---------- */
 .benef-b{background:var(--offwhite);}
@@ -83,12 +96,20 @@ nav.main-nav a:hover{opacity:1; color:var(--green-bright);}
 
 /* ---------- COMISIONES ---------- */
 .comis-b{background:linear-gradient(150deg, var(--green-deep), var(--black)); color:var(--white);}
-.ladder{display:flex; align-items:flex-end; gap:14px; margin:50px 0 40px; overflow-x:auto; padding-bottom:6px;}
-.rung{flex:1 0 90px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:10px;}
-.rung .bar{width:100%; border-radius:12px 12px 4px 4px; background:linear-gradient(180deg, var(--green-bright), var(--green)); display:flex; align-items:flex-start; justify-content:center; padding-top:12px; font-family:'Montserrat',sans-serif; font-weight:800; color:var(--black); font-size:1.05rem;}
-.rung span{font-size:0.78rem; font-weight:700; color:rgba(255,255,255,0.75);}
-.comis-example{background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); border-radius:var(--radius); padding:26px 28px; margin-bottom:20px;}
+.ladder{display:flex; align-items:flex-end; gap:14px; margin:50px 0 16px; overflow-x:auto; padding:4px 4px 10px;}
+.rung{flex:1 0 90px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:10px; cursor:pointer; -webkit-tap-highlight-color:transparent;}
+.rung .pct{font-family:'Montserrat',sans-serif; font-weight:800; color:var(--white); font-size:1.05rem; opacity:0.5; transform:translateY(6px); transition:opacity .5s ease, transform .5s ease, color .25s ease;}
+.ladder.in .rung .pct{opacity:1; transform:translateY(0);}
+.rung .bar{width:100%; height:0; border-radius:12px 12px 4px 4px; background:linear-gradient(180deg, var(--green-bright), var(--green)); transition:height 1s cubic-bezier(.16,.84,.44,1), box-shadow .25s ease, transform .2s ease, filter .25s ease; transition-delay:calc(var(--i, 0) * 90ms);}
+.ladder.in .rung .bar{height:var(--h);}
+.rung:hover .bar, .rung.active .bar{transform:translateY(-6px); filter:brightness(1.12); box-shadow:0 0 0 3px rgba(255,255,255,0.3) inset, 0 14px 28px -8px rgba(115,204,179,0.55);}
+.rung.active .pct{color:var(--green-bright);}
+.rung span.rname{font-size:0.78rem; font-weight:700; color:rgba(255,255,255,0.75); transition:color .25s ease;}
+.rung.active span.rname{color:var(--green-bright);}
+.ladder-hint{text-align:center; font-size:0.76rem; color:rgba(255,255,255,0.4); margin-bottom:28px;}
+.comis-example{background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); border-radius:var(--radius); padding:26px 28px; margin-bottom:20px; transition:border-color .3s ease, background .3s ease;}
 .comis-example b{color:var(--green-bright); font-family:'Montserrat',sans-serif;}
+.comis-example.pulse{border-color:rgba(115,204,179,0.45); background:rgba(115,204,179,0.08);}
 .comis-note{font-size:0.82rem; color:rgba(255,255,255,0.5); max-width:640px; line-height:1.7;}
 
 /* ---------- PROYECTOS ---------- */
@@ -176,7 +197,9 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
 
 @media (max-width:980px){
   .hero-b .wrap{grid-template-columns:1fr;}
-  .hero-media{aspect-ratio:16/10; order:-1;}
+  .hero-media{order:-1;}
+  .floating-badge{padding:9px 13px;}
+  .floating-badge b{font-size:0.96rem;}
   .benef-grid{grid-template-columns:repeat(2,1fr);}
   .proy-grid{grid-template-columns:1fr;}
   .proy-card{flex-direction:column;}
@@ -256,8 +279,18 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
         <div><b>+3 años</b><span>De trayectoria empresarial</span></div>
       </div>
     </div>
-    <div class="hero-media">
-      <img src="/recursos/imagenes/equipo.jpg" alt="Equipo NEXO Business en actividad de campo">
+    <div class="hero-media" id="heroMedia">
+      <div class="hero-media-frame" id="heroFrame">
+        <img src="/recursos/imagenes/equipo.jpg" alt="Equipo NEXO Business en actividad de campo">
+        <svg class="hm-corner tl" viewBox="0 0 26 26"><path d="M1 12 V1 H12"/></svg>
+        <svg class="hm-corner br" viewBox="0 0 26 26"><path d="M1 12 V1 H12"/></svg>
+      </div>
+      <div class="floating-badge fb-1" data-io>
+        <b>+220</b><span>Asesores activos</span>
+      </div>
+      <div class="floating-badge fb-2" data-io style="transition-delay:.15s">
+        <b>+3 años</b><span>De trayectoria</span>
+      </div>
     </div>
   </div>
 </section>
@@ -314,17 +347,18 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
       <p>En NEXO, cada venta puede ayudarte a avanzar. Nuestro sistema de rangos reconoce tus resultados y te permite acceder a mejores porcentajes de comisión, desde 5% hasta 15% según el rango alcanzado.</p>
     </div>
 
-    <div class="ladder">
-      <div class="rung"><div class="bar" style="height:90px;">5%</div><span>Máster</span></div>
-      <div class="rung"><div class="bar" style="height:110px;">7%</div><span>Plata</span></div>
-      <div class="rung"><div class="bar" style="height:130px;">10%</div><span>Oro</span></div>
-      <div class="rung"><div class="bar" style="height:150px;">12%</div><span>Diamante</span></div>
-      <div class="rung"><div class="bar" style="height:170px;">14%</div><span>Diamante 50K</span></div>
-      <div class="rung"><div class="bar" style="height:190px;">15%</div><span>Diamante 100K</span></div>
+    <div class="ladder" id="ladder">
+      <div class="rung active" style="--i:0;" data-pct="5" data-rango="Máster"><span class="pct">5%</span><div class="bar" style="--h:90px;"></div><span class="rname">Máster</span></div>
+      <div class="rung" style="--i:1;" data-pct="7" data-rango="Plata"><span class="pct">7%</span><div class="bar" style="--h:110px;"></div><span class="rname">Plata</span></div>
+      <div class="rung" style="--i:2;" data-pct="10" data-rango="Oro"><span class="pct">10%</span><div class="bar" style="--h:130px;"></div><span class="rname">Oro</span></div>
+      <div class="rung" style="--i:3;" data-pct="12" data-rango="Diamante"><span class="pct">12%</span><div class="bar" style="--h:150px;"></div><span class="rname">Diamante</span></div>
+      <div class="rung" style="--i:4;" data-pct="14" data-rango="Diamante 50K"><span class="pct">14%</span><div class="bar" style="--h:170px;"></div><span class="rname">Diamante 50K</span></div>
+      <div class="rung" style="--i:5;" data-pct="15" data-rango="Diamante 100K"><span class="pct">15%</span><div class="bar" style="--h:190px;"></div><span class="rname">Diamante 100K</span></div>
     </div>
+    <p class="ladder-hint">Toca un rango para ver cuánto representaría en una venta de S/60,000.</p>
 
-    <div class="comis-example">
-      <p>Ejemplo referencial: en una operación de <b>S/60,000</b>, una comisión del <b>5%</b> representa <b>S/3,000</b>.</p>
+    <div class="comis-example" id="comisExample">
+      <p>Ejemplo referencial: en una operación de <b>S/60,000</b>, una comisión del <b id="exPct">5%</b> (<b id="exRango">Máster</b>) representa <b id="exMonto">S/3,000</b>.</p>
     </div>
     <p class="comis-note">El porcentaje y las condiciones aplicables dependen del proyecto, el rango vigente, la forma de pago y el cumplimiento de las políticas comerciales. Este ejemplo es referencial y no constituye una promesa automática de pago.</p>
   </div>
@@ -554,6 +588,64 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
   mobileNav.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){ mobileNav.classList.remove('open'); });
   });
+
+  /* ---- reveal-on-scroll: floating badges + ladder ---- */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.35});
+  document.querySelectorAll('[data-io]').forEach(function(el){ io.observe(el); });
+  var ladderEl = document.getElementById('ladder');
+  if (ladderEl) io.observe(ladderEl);
+
+  /* ---- comisiones: escalera interactiva ---- */
+  var rungs = document.querySelectorAll('.rung');
+  var exPct = document.getElementById('exPct');
+  var exRango = document.getElementById('exRango');
+  var exMonto = document.getElementById('exMonto');
+  var comisExample = document.getElementById('comisExample');
+  function selectRung(r){
+    rungs.forEach(function(x){ x.classList.remove('active'); });
+    r.classList.add('active');
+    var pct = parseFloat(r.getAttribute('data-pct'));
+    var monto = Math.round(60000 * pct / 100);
+    exPct.textContent = pct + '%';
+    exRango.textContent = r.getAttribute('data-rango');
+    exMonto.textContent = 'S/' + monto.toLocaleString('es-PE');
+    comisExample.classList.add('pulse');
+    setTimeout(function(){ comisExample.classList.remove('pulse'); }, 500);
+  }
+  rungs.forEach(function(r){
+    r.addEventListener('click', function(){ selectRung(r); });
+    r.addEventListener('mouseenter', function(){ selectRung(r); });
+  });
+
+  /* ---- hero: tilt con el mouse + parallax al hacer scroll ---- */
+  var heroMedia = document.getElementById('heroMedia');
+  var heroFrame = document.getElementById('heroFrame');
+  if (heroMedia && heroFrame && window.matchMedia('(hover:hover)').matches){
+    heroMedia.addEventListener('mousemove', function(e){
+      var r = heroMedia.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width - 0.5;
+      var py = (e.clientY - r.top) / r.height - 0.5;
+      heroFrame.style.transform = 'rotateY(' + (px * 8) + 'deg) rotateX(' + (py * -8) + 'deg)';
+    });
+    heroMedia.addEventListener('mouseleave', function(){ heroFrame.style.transform = ''; });
+  }
+  var heroSection = document.getElementById('inicio');
+  if (heroMedia && heroSection){
+    window.addEventListener('scroll', function(){
+      var rect = heroSection.getBoundingClientRect();
+      if (rect.bottom > 0 && rect.top < window.innerHeight){
+        var progress = Math.min(Math.max(-rect.top / rect.height, 0), 1);
+        heroMedia.style.transform = 'translateY(' + (progress * 26) + 'px)';
+      }
+    });
+  }
 })();
 </script>
 </body>
