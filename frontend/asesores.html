@@ -195,6 +195,21 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
 .wa-float svg{width:26px; height:26px; fill:#fff;}
 @keyframes wa-pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.5);} 70%{box-shadow:0 0 0 14px rgba(37,211,102,0);} 100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
 
+/* ---------- SCROLL REVEAL ---------- */
+.reveal{opacity:0; transform:translateY(28px); will-change:opacity, transform;}
+.reveal.in{opacity:1; transform:translateY(0);}
+
+/* ---------- PINNED SECTIONS: hold in place while items reveal one by one ---------- */
+.pin-wrap{position:relative;}
+.pin-wrap .pin-sticky{position:sticky; top:0; min-height:100vh; display:flex; flex-direction:column; justify-content:center;}
+.pin-item{opacity:0; transform:translateY(28px); will-change:opacity, transform;}
+@media (prefers-reduced-motion: reduce){
+  .pin-wrap{height:auto !important;}
+  .pin-wrap .pin-sticky{position:static; min-height:0;}
+  .pin-item{opacity:1 !important; transform:none !important;}
+  .reveal{opacity:1 !important; transform:none !important;}
+}
+
 @media (max-width:980px){
   .hero-b .wrap{grid-template-columns:1fr;}
   .hero-media{order:-1;}
@@ -296,7 +311,8 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
 </section>
 
 <!-- ================= SECCIÓN 2: BENEFICIOS ================= -->
-<section class="benef-b section-pad" id="beneficios">
+<section class="benef-b section-pad pin-wrap" id="beneficios" style="height:320vh;">
+ <div class="pin-sticky">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Más que vender terrenos</span>
@@ -304,38 +320,39 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
       <p>En NEXO no tienes que avanzar solo. Accede a herramientas, acompañamiento y experiencias que te ayudarán a convertir oportunidades en ventas.</p>
     </div>
     <div class="benef-grid">
-      <div class="benef-card">
+      <div class="benef-card pin-item">
         <div class="benef-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
         <h4>Comisiones por cada venta</h4>
         <p>Genera ingresos mediante un esquema de comisiones definido según tu rango y desempeño comercial.</p>
       </div>
-      <div class="benef-card">
+      <div class="benef-card pin-item">
         <div class="benef-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
         <h4>Capacitación constante</h4>
         <p>Aprende sobre los proyectos, prospección, seguimiento, negociación, manejo de objeciones y cierre de ventas.</p>
       </div>
-      <div class="benef-card">
+      <div class="benef-card pin-item">
         <div class="benef-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg></div>
         <h4>Material comercial</h4>
         <p>Recibe fichas, precios vigentes, piezas publicitarias, videos y argumentos para presentar cada proyecto.</p>
       </div>
-      <div class="benef-card">
+      <div class="benef-card pin-item">
         <div class="benef-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><circle cx="12" cy="8" r="4"/></svg></div>
         <h4>Acompañamiento en el cierre</h4>
         <p>Nuestro equipo comercial te orienta durante el proceso, desde la atención inicial hasta la separación y firma.</p>
       </div>
-      <div class="benef-card">
+      <div class="benef-card pin-item">
         <div class="benef-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
         <h4>Visitas a los proyectos</h4>
         <p>Conoce personalmente los proyectos y participa en visitas con clientes y actividades de campo.</p>
       </div>
-      <div class="benef-card">
+      <div class="benef-card pin-item">
         <div class="benef-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 6h7v7"/></svg></div>
         <h4>Línea de carrera</h4>
         <p>Avanza mediante un sistema de rangos que reconoce tus resultados y mejora tus oportunidades de crecimiento.</p>
       </div>
     </div>
   </div>
+ </div>
 </section>
 
 <!-- ================= SECCIÓN 3: COMISIONES Y RANGOS ================= -->
@@ -365,7 +382,8 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
 </section>
 
 <!-- ================= SECCIÓN 4: PROYECTOS ================= -->
-<section class="proy-b section-pad" id="proyectos">
+<section class="proy-b section-pad pin-wrap" id="proyectos" style="height:260vh;">
+ <div class="pin-sticky">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Proyectos con propósito</span>
@@ -373,7 +391,7 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
       <p>Como asesor NEXO recibirás información comercial, documentación disponible, precios actualizados y acompañamiento para presentar correctamente cada oportunidad.</p>
     </div>
     <div class="proy-grid">
-      <article class="proy-card">
+      <article class="proy-card pin-item">
         <div class="img"><img src="/recursos/imagenes/card-paraiso.jpg" alt="Paraíso Frutal"></div>
         <div class="body">
           <div class="loc">Huaral</div>
@@ -383,7 +401,7 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
           <a href="/proyectos/paraiso-frutal.html" class="cta">Conocer el proyecto →</a>
         </div>
       </article>
-      <article class="proy-card">
+      <article class="proy-card pin-item">
         <div class="img"><img src="/recursos/imagenes/card-huacachina.jpg" alt="Huacachina del Norte"></div>
         <div class="body">
           <div class="loc">Ubicación por confirmar</div>
@@ -393,7 +411,7 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
           <a href="/proyectos/huacachina-del-norte.html" class="cta">Conocer el proyecto →</a>
         </div>
       </article>
-      <article class="proy-card">
+      <article class="proy-card pin-item">
         <div class="img"><img src="/recursos/imagenes/card-oroberry.jpg" alt="Oro Berry I"></div>
         <div class="body">
           <div class="loc">Huacho</div>
@@ -403,7 +421,7 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
           <a href="/proyectos/oro-berry.html" class="cta">Conocer Oro Berry II →</a>
         </div>
       </article>
-      <article class="proy-card">
+      <article class="proy-card pin-item">
         <div class="img"><img src="/recursos/imagenes/card-oroberry.jpg" alt="Oro Berry II"></div>
         <div class="body">
           <div class="loc">Huacho</div>
@@ -415,33 +433,35 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
       </article>
     </div>
   </div>
+ </div>
 </section>
 
 <!-- ================= SECCIÓN 5: CÓMO COMENZAR ================= -->
-<section class="pasos-b section-pad" id="como-funciona">
+<section class="pasos-b section-pad pin-wrap" id="como-funciona" style="height:280vh;">
+ <div class="pin-sticky">
   <div class="wrap">
     <div class="section-head on-dark center reveal">
       <span class="eyebrow on-dark" style="justify-content:center;">Tu ruta de ingreso</span>
       <h2>Así se comienza y se entra a la comunidad</h2>
     </div>
     <div class="pasos-list">
-      <div class="paso hi">
+      <div class="paso hi pin-item">
         <div class="num">1</div>
         <div><h4>Únete gratis al grupo</h4><p>Entra a la comunidad de asesores NEXO por WhatsApp. Recibe novedades, conoce las actividades disponibles y empieza a relacionarte con el equipo.</p></div>
       </div>
-      <div class="paso">
+      <div class="paso pin-item">
         <div class="num">2</div>
         <div><h4>Participa y resuelve tus dudas</h4><p>Preséntate, conversa con el equipo, participa en las dinámicas y pregunta todo lo que necesites. Queremos que conozcas cómo funciona NEXO antes de tomar una decisión.</p></div>
       </div>
-      <div class="paso">
+      <div class="paso pin-item">
         <div class="num">3</div>
         <div><h4>Vive Renacer del Asesor</h4><p>Asiste a una experiencia presencial para conocer al equipo, descubrir el sistema de trabajo, escuchar historias reales y entender las oportunidades de crecimiento.</p></div>
       </div>
-      <div class="paso">
+      <div class="paso pin-item">
         <div class="num">4</div>
         <div><h4>Activa tu membresía</h4><p>Cuando te sientas preparado, activa tu membresía anual de S/390 y accede al sistema comercial, materiales, capacitaciones y proyectos habilitados.</p></div>
       </div>
-      <div class="paso">
+      <div class="paso pin-item">
         <div class="num">5</div>
         <div><h4>Empieza a vender y crecer</h4><p>Comparte los proyectos, contacta potenciales clientes, agenda presentaciones y recibe acompañamiento durante el proceso de venta. Cada resultado te permite avanzar en la línea de carrera NEXO.</p></div>
       </div>
@@ -454,10 +474,12 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
       <p>Primero conoce la comunidad. Después decide si quieres dar el siguiente paso.</p>
     </div>
   </div>
+ </div>
 </section>
 
 <!-- ================= SECCIÓN 6: COMUNIDAD (mosaico) ================= -->
-<section class="comunidad-b section-pad" id="experiencias">
+<section class="comunidad-b section-pad pin-wrap" id="experiencias" style="height:240vh;">
+ <div class="pin-sticky">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">No solo te unes a un equipo</span>
@@ -465,17 +487,19 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
       <p>Participa en capacitaciones, visitas a proyectos, reuniones comerciales, reconocimientos y experiencias creadas para fortalecer tu desarrollo como asesor. Aquí celebramos el esfuerzo, los resultados y la decisión de construir una nueva etapa profesional.</p>
     </div>
     <div class="mosaic">
-      <div class="m1"><img src="/recursos/imagenes/equipo.jpg" alt="Equipo NEXO Business"><span class="tag">Equipo NEXO</span></div>
-      <div class="m2"><img src="/recursos/imagenes/hero-huacachina.jpg" alt="Visita a Huacachina del Norte"><span class="tag">Visita a proyecto</span></div>
-      <div class="m3"><img src="/recursos/imagenes/card-paraiso.jpg" alt="Visita a Paraíso Frutal"><span class="tag">Paraíso Frutal</span></div>
-      <div class="m4"><img src="/recursos/imagenes/paraiso-atardecer.jpg" alt="Actividad de campo"><span class="tag">Actividad de campo</span></div>
+      <div class="m1 pin-item"><img src="/recursos/imagenes/equipo.jpg" alt="Equipo NEXO Business"><span class="tag">Equipo NEXO</span></div>
+      <div class="m2 pin-item"><img src="/recursos/imagenes/hero-huacachina.jpg" alt="Visita a Huacachina del Norte"><span class="tag">Visita a proyecto</span></div>
+      <div class="m3 pin-item"><img src="/recursos/imagenes/card-paraiso.jpg" alt="Visita a Paraíso Frutal"><span class="tag">Paraíso Frutal</span></div>
+      <div class="m4 pin-item"><img src="/recursos/imagenes/paraiso-atardecer.jpg" alt="Actividad de campo"><span class="tag">Actividad de campo</span></div>
     </div>
     <p class="mosaic-note">Fotos referenciales — se actualizarán con material real de capacitaciones, reconocimientos y cierres apenas esté disponible.</p>
   </div>
+ </div>
 </section>
 
 <!-- ================= SECCIÓN 7: TESTIMONIOS ================= -->
-<section class="testi-b section-pad">
+<section class="testi-b section-pad pin-wrap" style="height:220vh;">
+ <div class="pin-sticky">
   <div class="wrap">
     <div class="section-head on-dark center reveal">
       <span class="eyebrow on-dark" style="justify-content:center;">Historias que inspiran</span>
@@ -483,20 +507,21 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
       <p>Conoce la experiencia de asesores que encontraron en NEXO una oportunidad para aprender, generar ingresos y desarrollar nuevas capacidades comerciales.</p>
     </div>
     <div class="testi-grid">
-      <div class="testi-card">
+      <div class="testi-card pin-item">
         <div class="testi-thumb"><button class="play-btn" type="button" aria-label="Video próximamente">▶</button></div>
         <div class="testi-info"><span>Testimonio en producción — disponible pronto</span></div>
       </div>
-      <div class="testi-card">
+      <div class="testi-card pin-item">
         <div class="testi-thumb"><button class="play-btn" type="button" aria-label="Video próximamente">▶</button></div>
         <div class="testi-info"><span>Testimonio en producción — disponible pronto</span></div>
       </div>
-      <div class="testi-card">
+      <div class="testi-card pin-item">
         <div class="testi-thumb"><button class="play-btn" type="button" aria-label="Video próximamente">▶</button></div>
         <div class="testi-info"><span>Testimonio en producción — disponible pronto</span></div>
       </div>
     </div>
   </div>
+ </div>
 </section>
 
 <!-- ================= SECCIÓN 8: FAQ ================= -->
@@ -646,6 +671,65 @@ footer .legal{max-width:600px; line-height:1.8; color:rgba(255,255,255,0.4); fon
       }
     });
   }
+})();
+
+var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- scroll-scrubbed reveal: fades/rises in proportion to scroll position ---------- */
+(function () {
+  var items = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if (!items.length) return;
+  function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+  function update() {
+    var vh = window.innerHeight;
+    items.forEach(function (el) {
+      if (reduceMotion) { el.style.opacity = '1'; el.style.transform = 'none'; el.classList.add('in'); return; }
+      var rect = el.getBoundingClientRect();
+      var startAt = vh * 0.88;
+      var endAt = vh * 0.42;
+      var progress = clamp((startAt - rect.top) / (startAt - endAt), 0, 1);
+      el.style.opacity = progress.toFixed(3);
+      el.style.transform = 'translateY(' + (28 * (1 - progress)).toFixed(1) + 'px)';
+      el.classList.toggle('in', progress > 0.97);
+    });
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking) { requestAnimationFrame(function () { update(); ticking = false; }); ticking = true; }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+/* ---------- pinned sections: hold in place while their items reveal one by one ---------- */
+(function () {
+  var pinWraps = Array.prototype.slice.call(document.querySelectorAll('.pin-wrap'));
+  if (!pinWraps.length || reduceMotion) return;
+  function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+  var rigs = pinWraps.map(function (wrap) {
+    return { wrap: wrap, sticky: wrap.querySelector('.pin-sticky'), pinItems: Array.prototype.slice.call(wrap.querySelectorAll('.pin-item')) };
+  }).filter(function (r) { return r.sticky && r.pinItems.length; });
+  function update() {
+    rigs.forEach(function (r) {
+      var wrapRect = r.wrap.getBoundingClientRect();
+      if (wrapRect.bottom < -200 || wrapRect.top > window.innerHeight + 200) return;
+      var totalRunway = Math.max(r.wrap.offsetHeight - r.sticky.offsetHeight, 1);
+      var scrolled = clamp(-wrapRect.top, 0, totalRunway);
+      var overall = scrolled / totalRunway;
+      var n = r.pinItems.length;
+      r.pinItems.forEach(function (el, i) {
+        var itemProgress = clamp((overall - i / n) * n, 0, 1);
+        el.style.opacity = itemProgress.toFixed(3);
+        el.style.transform = 'translateY(' + (28 * (1 - itemProgress)).toFixed(1) + 'px)';
+      });
+    });
+  }
+  var ticking2 = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking2) { requestAnimationFrame(function () { update(); ticking2 = false; }); ticking2 = true; }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
 })();
 </script>
 </body>
